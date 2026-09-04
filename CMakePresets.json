@@ -1,0 +1,37 @@
+{
+  "version": 6,
+  "cmakeMinimumRequired": { "major": 3, "minor": 23, "patch": 0 },
+  "configurePresets": [
+    {
+      "name": "ninja",
+      "displayName": "Ninja + MLIR",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/build-ninja",
+      "cacheVariables": {
+        "MLIR_DIR": "$env{MLIR_DIR}",
+        "CMAKE_INSTALL_PREFIX": "${sourceDir}/install"
+      }
+    },
+    {
+      "name": "vs2026",
+      "displayName": "Visual Studio 2026 + MLIR",
+      "generator": "Visual Studio 18 2026",
+      "architecture": "x64",
+      "binaryDir": "${sourceDir}/build-vs",
+      "cacheVariables": {
+        "MLIR_DIR": "$env{MLIR_DIR}",
+        "CMAKE_INSTALL_PREFIX": "${sourceDir}/install"
+      }
+    }
+  ],
+  "buildPresets": [
+    { "name": "ninja-debug", "configurePreset": "ninja" },
+    { "name": "vs2026-debug", "configurePreset": "vs2026", "configuration": "Debug" },
+    { "name": "ninja-install", "configurePreset": "ninja", "targets": ["install"] },
+    { "name": "vs2026-install", "configurePreset": "vs2026", "configuration": "Debug", "targets": ["install"] }
+  ],
+  "testPresets": [
+    { "name": "ninja-tests", "configurePreset": "ninja", "output": { "outputOnFailure": true } },
+    { "name": "vs2026-tests", "configurePreset": "vs2026", "configuration": "Debug", "output": { "outputOnFailure": true } }
+  ]
+}

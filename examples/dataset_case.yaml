@@ -1,0 +1,9 @@
+id: nested_demo_001
+sequence: gcg aaa gcu c
+reference_structure: ..( . (...))
+reference_topology: nested
+source: synthetic-regression-fixture
+min_loop: 3
+pair_score: 1
+wobble_score: 0
+notes: reference structure is a contact-metric demonstration, not an experimental annotation

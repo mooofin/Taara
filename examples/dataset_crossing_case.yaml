@@ -1,0 +1,8 @@
+id: crossing_demo_001
+sequence: GCAGCAAGCAGC
+reference_structure: ((.[...))..]
+reference_topology: h_type_pseudoknot
+source: synthetic-crossing-fixture
+min_loop: 1
+stem1_length: 2
+stem2_length: 1
