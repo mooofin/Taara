@@ -1,6 +1,3 @@
-# Tara
-
-![Tara — tiny abstractions for real acceleration](assets/tara.png)
 
 `Tara` is a  RNA-folding compiler built on [MLIR]. RNA
 topology is part of the IR, so it chooses the lowering strategy:
